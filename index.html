@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Manager</title>
+
+    <link rel="stylesheet" type="text/css" href="css/financemanagerstyle.css">
+
+    <script src = "https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+    <div id="overlay" class = "overlay">
+    <div id = "overlayContent" class = "overlayContent">
+
+        <h1>Finance Manager</h1>
+        <button id = "sign-up">Sign-Up</button>
+        <button id = "sign-in">Sign-In</button>
+
+    </div>
+    </div>
+
+    <div id = "mainPage" class = "mainPage" style = "display: none;">
+
+<main>
+
+<section id = "income&expenses">
+<h2>Income & Expense Tracker</h2>
+<form id ="transactionform">
+
+<label for = "amount">Amount</label>
+<input type = "number" id = "amount" step = "0.01" min = "0.01" required>
+
+<label for = "category">Category</label>
+<input type = "text" id = "category" required>
+
+<label for = "type">Type</label>
+
+<select id = "type">
+<option value = "income">Income</option>
+<option value = "expenses">Expenses</option>
+</select>
+<button type = "submit">Record Transaction</button>
+
+</form>
+</section>
+
+<section id = "financialreports">
+<h2>Financial Summary</h2>
+<p>Total Income: <span id = "totalIncome">$0</span></p>
+<p>Total Expense: <span id = "totalExpense">$0</span></p>
+<p>Net Income: <span id = "netIncome">$0</span></p>
+
+<section id = "financialcharts">
+<h2>Personalized Financial Chart</h2>
+<canvas id = "incomeExpenseChart"></canvas>
+
+<section id = "transactionHistory">
+<h2>Transaction History</h2>
+<table>
+<thead>
+<tr>
+<th>Amount</th>
+<th>Category</th>
+<th>Date</th>
+</tr>
+</thead>
+<tbody id = "transactionTable">
+
+
+</tbody>
+</table>
+</section>
+
+</section>
+
+<section id  = "financialTrends">
+<h2>Financial Trends</h2>
+
+<canvas id = "expenseChart" width = "400" height = "400"></canvas>
+
+</section>
+
+</section>
+
+<section id = "budgets">
+<h2>Your Budgets</h2>
+
+<form id = "budgetForm">
+
+<label for = "budgetCategory">Category:</label>
+<input type = "text" id = "budgetCategory" required>
+
+<label for = "budgetAmount">Amount:</label>
+<input type = "number" id = "budgetAmount" required>
+
+<button type = "setBudget">Submit</button>
+
+<h3>Budget List</h3>
+<ul id = "budgetList"></ul>
+
+</form>
+
+</section>
+
+<section id = "settings">
+<label for = "currency">Choose Currency:</label>
+<select id = "currencyOptions">
+<option value = "USD">$ - US dollars</option>
+<option value = "EUR">€ - Euros</option>
+<option value = "GBP">£ - British Pounds</option>
+
+</select>
+
+
+
+</section>
+
+
+</main>
+
+</div>
+
+
+<script src="javascript/financemanager.js" defer></script>
+</body>
+</html>
